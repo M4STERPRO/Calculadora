@@ -6,7 +6,7 @@ int main()
     float num1, num2, resultado;
     char operacion, loop;
     
-    printf("Bienvenido a la calculadora operacional" "\n");
+    printf("Bienvenido a la Calculadora Operacional" "\n");
     printf("Ingresa los valores a operar" "\n");
     do{
         
@@ -31,9 +31,13 @@ int main()
             printf("El resultado de la multiplicación es: %f" "\n", resultado);
             break;
         case '/':
-            resultado = num1 / num2;
-            printf("El resultado de la división es: %f" "\n", resultado);
-            break;
+            if (num2 != 0) {
+                resultado = num1 / num2;
+                printf("El resultado de la división es: %f" "\n", resultado);
+            } else {
+                printf("No se puede dividir entre 0" "\n");
+                break;
+            }
         default:
             printf ("La operación no es válida" "\n");
             break;
@@ -43,7 +47,7 @@ int main()
         __fpurge(stdin);
         scanf("%c", &loop);
         }while (loop == '1');
-        printf("Gracias por usar la calculadora operacional!");
+        printf("Gracias por usar la Calculadora Operacional!");
         
         return 0;
 }
